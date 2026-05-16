@@ -74,10 +74,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Glamupbykirthi — Luxury Makeup & Hairstyling Studio in Melbourne" },
       { name: "description", content: "Glamupbykirthi is a luxury makeup and hairstyling studio in Docklands, Melbourne. Bridal, HD, soft glam and hairstyling — book on WhatsApp." },
-      { property: "og:title", content: "Glamupbykirthi — Luxury Makeup Studio Melbourne" },
-      { property: "og:description", content: "Premium bridal, HD and soft glam makeup with expert hairstyling in Melbourne." },
+      { property: "og:title", content: "Glamupbykirthi — Luxury Makeup & Hairstyling Studio in Melbourne" },
+      { property: "og:description", content: "Glamupbykirthi is a luxury makeup and hairstyling studio in Docklands, Melbourne. Bridal, HD, soft glam and hairstyling — book on WhatsApp." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Glamupbykirthi — Luxury Makeup & Hairstyling Studio in Melbourne" },
+      { name: "twitter:description", content: "Glamupbykirthi is a luxury makeup and hairstyling studio in Docklands, Melbourne. Bridal, HD, soft glam and hairstyling — book on WhatsApp." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c432a870-8577-4f02-bcce-6ce624724086/id-preview-cb118e9b--66096df3-4e2c-4041-9838-85934b3c7a4c.lovable.app-1778917583604.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c432a870-8577-4f02-bcce-6ce624724086/id-preview-cb118e9b--66096df3-4e2c-4041-9838-85934b3c7a4c.lovable.app-1778917583604.png" },
     ],
     links: [
       {
