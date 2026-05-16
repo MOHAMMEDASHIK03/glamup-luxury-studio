@@ -72,14 +72,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Glamupbykirthi — Luxury Makeup & Hairstyling Studio in Melbourne" },
+      { name: "description", content: "Glamupbykirthi is a luxury makeup and hairstyling studio in Docklands, Melbourne. Bridal, HD, soft glam and hairstyling — book on WhatsApp." },
+      { property: "og:title", content: "Glamupbykirthi — Luxury Makeup Studio Melbourne" },
+      { property: "og:description", content: "Premium bridal, HD and soft glam makeup with expert hairstyling in Melbourne." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
@@ -108,12 +106,27 @@ function RootShell({ children }: { children: React.ReactNode }) {
   );
 }
 
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { WhatsAppFloating } from "@/components/WhatsAppButton";
+import { Toaster } from "sonner";
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const path = typeof window !== "undefined" ? window.location.pathname : "";
+  const isAdmin = path.startsWith("/admin");
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <div className="flex min-h-screen flex-col">
+        {!isAdmin && <Navbar />}
+        <main className="flex-1">
+          <Outlet />
+        </main>
+        {!isAdmin && <Footer />}
+        {!isAdmin && <WhatsAppFloating />}
+        <Toaster position="top-center" richColors />
+      </div>
     </QueryClientProvider>
   );
 }
